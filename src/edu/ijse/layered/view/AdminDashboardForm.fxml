@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.layered.controller.AdminDashboardController">
+   <children>
+      <Label layoutX="300.0" layoutY="20.0" text="Admin Dashboard">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TabPane layoutX="20.0" layoutY="60.0" prefHeight="500.0" prefWidth="760.0">
+        <tabs>
+          <Tab text="Courses">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tblCourses" layoutX="20.0" layoutY="50.0" prefHeight="350.0" prefWidth="720.0" />
+                        <Button fx:id="btnAddCourse" layoutX="20.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnAddCourseOnAction" text="Add Course" />
+                        <Button fx:id="btnUpdateCourse" layoutX="120.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnUpdateCourseOnAction" text="Update Course" />
+                        <Button fx:id="btnDeleteCourse" layoutX="230.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnDeleteCourseOnAction" text="Delete Course" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="Students">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tblStudents" layoutX="20.0" layoutY="50.0" prefHeight="350.0" prefWidth="720.0" />
+                        <Button fx:id="btnAddStudent" layoutX="20.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnAddStudentOnAction" text="Add Student" />
+                        <Button fx:id="btnUpdateStudent" layoutX="120.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnUpdateStudentOnAction" text="Update Student" />
+                        <Button fx:id="btnDeleteStudent" layoutX="230.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnDeleteStudentOnAction" text="Delete Student" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="Lecturers">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tblLecturers" layoutX="20.0" layoutY="50.0" prefHeight="350.0" prefWidth="720.0" />
+                        <Button fx:id="btnAddLecturer" layoutX="20.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnAddLecturerOnAction" text="Add Lecturer" />
+                        <Button fx:id="btnUpdateLecturer" layoutX="120.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnUpdateLecturerOnAction" text="Update Lecturer" />
+                        <Button fx:id="btnDeleteLecturer" layoutX="230.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnDeleteLecturerOnAction" text="Delete Lecturer" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="btnLogout" layoutX="700.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" text="Logout" />
+   </children>
+</AnchorPane>

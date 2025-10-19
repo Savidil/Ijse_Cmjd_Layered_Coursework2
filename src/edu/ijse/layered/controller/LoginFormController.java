@@ -46,9 +46,9 @@ public class LoginFormController {
                 
                 // Redirect based on user role
                 if ("ADMIN".equals(user.getRole())) {
-                    loadDashboard("AdminDashboardForm.fxml", "Admin Dashboard");
+                    loadDashboard("/view/AdminDashboardForm.fxml", "Admin Dashboard");
                 } else if ("LECTURER".equals(user.getRole())) {
-                    loadDashboard("LecturerDashboardForm.fxml", "Lecturer Dashboard");
+                    loadDashboard("/view/LecturerDashboardForm.fxml", "Lecturer Dashboard");
                 }
                 
                 // Close login window
@@ -72,12 +72,14 @@ public class LoginFormController {
     
     private void loadDashboard(String fxmlFile, String title) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/edu/ijse/layered/view/" + fxmlFile));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Parent root = loader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle(title);
             stage.show();
         } catch (IOException e) {
+            showAlert(Alert.AlertType.ERROR, "Error", "Cannot load dashboard: " + e.getMessage());
             e.printStackTrace();
         }
     }

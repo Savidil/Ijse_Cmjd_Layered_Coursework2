@@ -4,15 +4,8 @@
  */
 package edu.ijse.layered.dao.custom;
 
-/**
- *
- * @author ASUS
- */
-
 import edu.ijse.layered.dao.CrudDAO;
-import edu.ijse.layered.entity.User;
+import edu.ijse.layered.entity.Course;
 
-public interface UserDAO extends CrudDAO<User, String> {
-    User findByUsername(String username) throws Exception;
-    boolean checkPassword(String username, String password) throws Exception;
+public interface CourseDAO extends CrudDAO<Course, String> {
 }
